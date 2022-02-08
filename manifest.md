@@ -17,12 +17,12 @@
 - В случае отступа от переменных или других ключевых слов, мы используем один пробел. Мы не выравниваем наш код по одной колонке.
 
 ```jsx
-// **Плохо**
+// Плохо
 
 const testVariable     = 'test';
 const longTestVariable = 'test2';
 
-// **Хорошо**
+// Хорошо
 
 const testVariable = 'test';
 const longTestVariable = 'test';
@@ -46,7 +46,7 @@ const SPORTS: Record<string, ISportUI> = {
 - Открывающие скобки блоков кода (функций, условных выражений, циклов) **ВСЕГДА** находятся на одной строке с оператором:
 
 ```jsx
-// **Плохо**
+// Плохо
 
 if (someCondition) 
 {
@@ -62,8 +62,8 @@ if (condition)
 else 
  console.log('else')
 
-// **Хорошо**
-
+// Хорошо
+  
 if (someCondition) {
   // some stuff
 }
@@ -78,14 +78,15 @@ if (condition) {
 - Ключевые слова в языке, синтаксические конструкции (разные по характеру), структуры типов разделяются в коде не более и не менее одной строкой.
 
 ```tsx
-// **Плохо**
+// Плохо
 
 import { app } from './app';
 interface SomeResult {
   readonly id: number;
 }
 const someResult: SomeResult = { id: 1 }
-****function createRequest(): void {
+
+function createRequest(): void {
   const xhr = new XMLHTTPRequest();
 
   return xhr;
@@ -96,11 +97,11 @@ for (let i = 0; i <= 5; i += 1) {
 	app.log();
 }
 
-**// Хорошо**
+// Хорошо
 
 import { app } from './app';
 
-****interface SomeResult {
+interface SomeResult {
   readonly id: number;
 }
 
@@ -119,7 +120,6 @@ for (let i = 0; i <= 5; i += 1) {
 
 	app.log();
 }
-****
 ```
 
 **Исключение!**
@@ -127,27 +127,27 @@ for (let i = 0; i <= 5; i += 1) {
 - Импорты из файлов библиотек, и импорты из файлов проекта должны разделяться между собой пустой строкой.
 
 ```tsx
-// **Плохо**
+// Плохо
 
 import { Stuff } from './utils/stuff';
 import * as lib from 'lib';
 import Vue from 'vue';
 import transform from './utils/transform';
 
-// **Хорошо**
+// Хорошо
 
 // Сначала глобальные либы.
-****import * as lib from 'lib';
+import * as lib from 'lib';
 import Vue from 'vue';
-****// Потом файлы проекта.
-****import { Stuff } from './utils/stuff';
+// Потом файлы проекта.
+import { Stuff } from './utils/stuff';
 import transform from './utils/transform';
 ```
 
 - В функциях, и блоках кода (`for/while/if`) код НЕ должен начинаться и заканчиваться с пустой строки.
 
 ```tsx
-// **Плохо**
+// Плохо
 
 const getRandomArrayElement = (arr) => {
 
@@ -163,7 +163,7 @@ for (const user of users) {
   user.update():
 }
 
-** // Хорошо**
+// Хорошо
 
 const getRandomArrayElement = (arr) => {
   const i = Math.floor(Math.random() * arr.length);
@@ -191,39 +191,39 @@ const userConfirmationText = "'Submut'"
 - Для переноса мы используем обратные кавычки  (`template-literals`) Запрещено использовать одинарные кавычки для переносов.
 
 ```tsx
-** // Плохо**
+// Плохо
 
 const text = 'Для переноса мы используем' +
   'обратные кавычки' +
   'не допускается использование одинарных' +
   ''
 
-// **Хорошо**
+// Хорошо
 
 const text = `Для переноса мы используем
 обратные кавычки
 не допускатеся использование одинарные`
 ```
 
-## **Именование**
+## Именование
 
 - Все переменные должны быть названы в **camelCase** регистре.
 
 ```tsx
-// **Плохо**
+// Плохо
 
 const very_long_variable_name = 'name'; // Даже если вы фанат Python.
 const VeryLongVariableName = 'name';
 const VERYLONGVARIABLENAME = 'name';
 
-// **Хорошо**
+// Хорошо
 
 const veryLongVariableName = 'name';
 
 const VERY_LONG_VARIABLE_NAME = 'name'; // Справедливо для констант
 ```
 
-**Исключение!**
+Исключение!
 
 Допускается именование в стиле **CONSTANT_CASE** для констант.  Для классов (`class`) и перечислений (`enum`) - **PascalCase**
 
@@ -259,11 +259,11 @@ enum Color {
 - При использование оператора `throw` мы передаем только объект `Error` или его потомков.
 
 ```tsx
-// **Плохо**
+// Плохо
 
 const api = getApiInstance();
 
-****function loadApi() {
+function loadApi() {
   if (!api) {
     throw 'No Api found';
   }
@@ -271,7 +271,7 @@ const api = getApiInstance();
 
 const api = getApiInstance();
 
-****function loadApi() {
+function loadApi() {
   if (!api) {
 		const errorName = 'ApiError';
 
@@ -281,7 +281,7 @@ const api = getApiInstance();
   }
 }
 
-**// Хорошо**
+// Хорошо**
 
 const api = getApiInstance();
 
@@ -295,7 +295,7 @@ function loadApi() {
 - Запрещено оставлять пустой блок `catch` при обработке ошибок. Это приводит к очень печальным последствиям: код не работает, но сообщение в логах / консоли не отображается. Также не рекомендуется использовать конструкцию `try/catch` без явной нужды.
 
 ```tsx
-**// Плохо**
+// Плохо
 
 try {
   await loadApi();
@@ -324,7 +324,7 @@ loadApi()
 
 // Все выше аналогично и для then/catch конструкций.
 
-**// Хорошо**
+// Хорошо
 
 loadApi(); // Если ошибку не нужно обрабатывать, то try / catch нам здесь и не нужен!
 
