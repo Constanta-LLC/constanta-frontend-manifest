@@ -93,8 +93,9 @@ function createRequest(): void {
 }
 for (let i = 0; i <= 5; i += 1) {
   const xhr = createRequest();
-	xhr.open();
-	app.log();
+
+  xhr.open();
+  app.log();
 }
 
 // Хорошо
@@ -116,9 +117,8 @@ function createRequest(): void {
 for (let i = 0; i <= 5; i += 1) {
   const xhr = createRequest();
 
-	xhr.open();
-
-	app.log();
+  xhr.open();
+  app.log();
 }
 ```
 
@@ -173,7 +173,7 @@ const getRandomArrayElement = (arr) => {
 },
 
 for (const user of users) {
-  user.update():
+  user.update();
 }
 
 ```
@@ -232,7 +232,7 @@ const VERY_LONG_VARIABLE_NAME = 'name'; // Справедливо для кон�
 
 // CONSTANT_CASE
 
-const TEST_API_ENDPOINT = 'http://url.com';
+const TEST_API_ENDPOINT = 'https://url.com';
 const MAX_USER_COUNT = 5;
 
 // PascalCase
@@ -273,7 +273,7 @@ const api = getApiInstance();
 
 function loadApi() {
   if (!api) {
-		const errorName = 'ApiError';
+	const errorName = 'ApiError';
 
     const errorMessage = 'No Api found';
 
@@ -287,7 +287,7 @@ const api = getApiInstance();
 
 function loadApi() {
   if (!api) {
-    throw new Error('No Api found';
+    throw new Error('No Api found');
   }
 }
 ```
@@ -304,7 +304,7 @@ try {
 }
 
 try {
-  await loadApi():
+  await loadApi();
 } catch {
   console.log('error happened'); 
   // Тоже плохо, не особо понятно по итогу что это за ошибка.
@@ -320,7 +320,7 @@ try {
 
 loadApi()
   .then(() => {})
-  .catch(() => {}
+  .catch(() => {});
 
 // Все выше аналогично и для then/catch конструкций.
 
