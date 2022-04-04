@@ -273,7 +273,7 @@ const api = getApiInstance();
 
 function loadApi() {
   if (!api) {
-	const errorName = 'ApiError';
+    const errorName = 'ApiError';
 
     const errorMessage = 'No Api found';
 
