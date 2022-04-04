@@ -419,7 +419,6 @@ props: {
   
 // Хорошо
 
-  
 <MyComponent :is-green="name"/>
 <MyComponent :has-active-user-with-payload="name"/>
 ```
@@ -477,18 +476,6 @@ components/
   SearchSidebarNavigation.vue
 
 ```
-
-- Порядок переменных, методов, хуков в Vue3 компонентах
-
-// todo
-
-- Декомпозиция, функции use
-
-// todo
-
-- Порядок опций
-
-// todo
 
 ## Как мы ведем проекты
 
