@@ -106,7 +106,7 @@ interface SomeResult {
   readonly id: number;
 }
 
-const someResult: someResult = { id: 1 }
+const someResult: SomeResult = { id: 1 }
 
 function createRequest(): void {
   const xhr = new XMLHTTPRequest();
